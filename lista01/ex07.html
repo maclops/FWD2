@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var texto = prompt("Digite um texto qualquer.")
+        var palavra1 = prompt("Agora, digite uma palavra que esteja no texto")
+        var palavra2 = prompt("Agora, outra palavra qualquer que não esteja no texto")
+
+        // função replace só consegui fazer a troca da 1ª instância
+        var saida = texto.split(palavra1).join(palavra2)
+
+        document.write(saida)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
