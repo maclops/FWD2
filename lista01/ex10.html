@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-        table {
-            border: 1px, solid, black;
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        tr:first-child {
+            font-weight: bolder;
+        }
+
+        td {
+            width: 10em
         }
     </style>
+</head>
+
+<body>
+    <table id="tabela"></table>
     <script>
-        var numero = prompt("Digite um número positivo maior que zero")
+        var numero = prompt("Digite um número inteiro positivo maior que zero")
 
-        // var numeroConvertido = parseInt(numero)
-        // var decimal = numeroConvertido
-        // var binario = numeroConvertido.toString(2)
-        // var hexadecimal = numeroConvertido.toString(16)
+        var table = document.getElementById("tabela")
+        var row = table.insertRow(0)
+        var coluna1 = row.insertCell(0)
+        var coluna2 = row.insertCell(1)
+        var coluna3 = row.insertCell(2)
 
-        // var body = document.querySelector('body')
-        // var tabela = document.createElement('table')
-        // var tabela = document.createElement('th')
-        // var tabela = document.createElement('tr')
-        // var tabela = document.createElement('td')
+        coluna1.innerHTML = "Base decimal"
+        coluna2.innerHTML = "Base binária"
+        coluna3.innerHTML = "Base hexadecimal"
 
-        document.write(`
-        <table>
-            <th>
-                <tr>Base decimal</tr>
-                <tr>Base binária</tr>
-                <tr>Base Hexadecimal</tr>
-            </tr>
-        </table>    
-        `)
-        for (var i = 0; i<=numero; i++) {
-            document.write(`<tr>${i}</tr>
-            <tr>${i.toString(2)}</tr>
-            <tr>${i.toString(16)}</tr><br>`)
+        for (var i = 0; i <= numero; i++) {
+            var row = table.insertRow(i + 1)
+            var coluna1 = row.insertCell(0)
+            var coluna2 = row.insertCell(1)
+            var coluna3 = row.insertCell(2)
+
+            coluna1.innerHTML = i
+            coluna2.innerHTML = i.toString(2)
+            coluna3.innerHTML = i.toString(16).toUpperCase()
         }
     </script>
-</head>
-<body>
-    
 </body>
+
 </html>
