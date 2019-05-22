@@ -5,7 +5,9 @@
     <title>Document</title>
     <script>
         var nome = prompt("Qual seu primeiro nome?")
+        nome = nome.replace(' ','')
         var sobrenome = prompt("Qual seu sobrenome?")
+        sobrenome = sobrenome.replace(' ','')
         var nomeCompleto = nome+sobrenome
         document.write("Seu nome completo contém: " + nomeCompleto.length + " letras.")
     </script>
