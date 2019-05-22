@@ -27,7 +27,12 @@
 <body>
     <table id="tabela"></table>
     <script>
-        var numero = prompt("Digite um número inteiro positivo maior que zero")
+        var numero = prompt("Digite um número inteiro positivo maior ou igual 2")
+        
+        while (numero < 2 || Number.isInteger(numero)) {
+            alert("Número informado inválido")
+            numero = prompt("Digite um número inteiro positivo maior que zero")
+        }
 
         var table = document.getElementById("tabela")
         var row = table.insertRow(0)
