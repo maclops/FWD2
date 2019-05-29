@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var numeros = []
+        // Criar dinamicamente os números de 0 a 60
+        for (var i = 0; i < 60; i++)
+            numeros[i] = i+1
+
+        var sorteio = []
+        for (var i = 0; i < 6; i++) {
+            // sorteio.push(parseInt(Math.random() * numeros.length))
+            sorteio.push(numeros.splice(parseInt(Math.random() * numeros.length),1))
+            console.log(sorteio)
+        }
+        
+        sorteio.sort((function(a, b){return (a-b)}))
+
+        document.write(sorteio)
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

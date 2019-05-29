@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Ordem de apresentação dos grupos</h1>
+    <div class="container">
+    </div>
+
+    <script>
+            var quantidade = prompt('Insira a quantidade de pessoas que irá participar do sorteio')
+            var nome = []
+            for (var i = 0; i < quantidade; i++) {
+                nome[i] = prompt('Informe o nome da ' + (i + 1) + 'ª pessoa')
+            }
+            // nome = ['Alice', 'Bob', 'Cleiton', 'Dafne', 'Erickson', 'Fagundes']
+    
+            nome.sort(function () {
+                return 0.5 - Math.random()
+            })
+    
+            var wrapper = document.querySelector('.container')
+            for (var i = 0; i < nome.length; i++) {
+                var HTMLNovo = '<p>' + (i + 1) + 'º - ' + nome[i] + '</p>'
+                // Insere o texto antes do conteúdo atual do elemento
+                wrapper.insertAdjacentHTML('beforebegin', HTMLNovo)
+            }
+            // https://codepen.io/maclops/pen/eaLKzK
+        </script>
+</body>
+
+</html>
