@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .botao {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <input class="botao" type="button" value="Clique aqui">
+
+
+    <script>
+        var botao = document.querySelector('.botao');
+        botao.addEventListener("click", function(){
+            alert("Sistemas para internet");
+            botao.style.backgroundColor = "yellow";
+            botao.style.border = "5px dashed green";
+            botao.innerHTML = "Sistemas para internet";
+        });
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function resultado() {
+            var nota1 = parseFloat(document.querySelector('#nota1').value);
+            var nota2 = parseFloat(document.querySelector('#nota2').value);
+            // console.log(nota1 + " " + nota2)
+            var res = (nota1 + nota2)
+            if (res >= 60)
+                alert("Aluno aprovado, parabéns")
+            else
+                alert("Aluno reprovado")
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="nota1">Nota (1º bimestre):</label>
+        <input type="text" name="nota1" id="nota1"><br>
+        <label for="nota2">Nota (2º bimestre):</label>
+        <input type="text" name="nota2" id="nota2"><br>
+        <input type="button" value="Resultado" onclick="resultado()">
+    </form>
+</body>
+
+</html>

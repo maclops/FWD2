@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            width: 180px;
+        }
+     
+        input {
+            max-width: 5em;
+        }
+        input:last-child {
+            max-width: 4em;
+        }
+    </style>
+    <script>
+        function calcular(operacao) {
+            // document.querySelector('#resultado').value = eval(document.querySelector('#valor1').value + operacao + document.querySelector('#valor2').value)
+
+            var valor1 = document.querySelector('#valor1').value;
+            console.log(valor1)
+            var valor2 = document.querySelector('#valor2').value;
+            console.log(valor2)
+            var saida = document.querySelector('#resultado');
+            if (valor1 != '' && valor2 != '')
+                saida.value = eval(valor1 + operacao + valor2)            
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Calculadora</h3>
+    <form>
+        <label for="valor1">1º Valor:</label>
+        <input type="text" name="valor1" id="valor1"><br>
+        <label for="valor2">2º Valor:</label>
+        <input type="text" name="valor2" id="valor2">
+        <div id="btn">
+            <input type="button" value="+" onclick="calcular('+')">
+            <input type="button" value="-" onclick="calcular('-')">
+            <input type="button" value="*" onclick="calcular('*')">
+            <input type="button" value="/" onclick="calcular('/')">
+        </div>
+        <label for="resultado">Resultado:</label>
+        <input type="text" name="resultado" id="resultado">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1em;
+        }
+
+        #titulo {
+            color: blue;
+            font-size: 24px;
+            font-family: Verdana;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        #login {
+            width: 100%;
+        }
+
+        .label {
+            text-align: right;
+        }
+
+        .info {
+            color: red;
+            font-size: 10px;
+            font-family: Verdana;
+        }
+
+        tfoot {
+            text-align: center;
+        }
+    </style>
+    <script src="./ex06.js"></script>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td colspan="3" id="titulo">Acesso ao Sistema</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="label">Login</td>
+                <td colspan="2"><input type="text" id="login"></td>
+            </tr>
+            <tr>
+                <td class="label">Senha</td>
+                <td><input type="password" id="senha"></td>
+                <td class="info">(max. 8 caracteres)</td>
+            </tr>
+            <tr>
+                <td class="label">Confirmar Senha</td>
+                <td><input type="password" id="confirmaSenha"></td>
+                <td class="info">(max. 8 caracteres)</td>
+            </tr>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td><input type="button" value="Entrar" onclick="enviar()">
+                    <input type="button" value="Limpar" onclick="limpar()"> </td>
+            </tr>
+        </tfoot>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function dobro() {
+            var valor = parseFloat(document.querySelector('#valor').value);
+            document.querySelector('#resultado').value = valor * 2;
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="valor">Digite um valor:</label>
+        <input type="text" name="valor" id="valor"><br>
+        <input type="button" value="Mostrar o dobro" onclick="dobro()">
+    </form>
+    <label for="resultado">Dobro do valor:</label>
+    <input type="text" name="resultado" id="resultado" disabled>
+</body>
+
+</html>
