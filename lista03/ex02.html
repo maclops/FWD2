@@ -6,8 +6,20 @@
     <title>Document</title>
     <script>
         function dobro() {
+            // forçando a variavel ser do tipo float, logo mesmo que seja digitado 
+            // algo diferente,  o tipo será sempre number
             var valor = parseFloat(document.querySelector('#valor').value);
-            document.querySelector('#resultado').value = valor * 2;
+            var saida = document.querySelector('#resultado');
+
+            // if (Number.isNaN(valor))
+            if (isNaN(valor))
+                saida.value = '';
+            else
+                saida.value = valor * 2;
+        }
+
+        function troca() {
+            document.querySelector("#valor").focus();
         }
     </script>
 </head>
@@ -19,7 +31,7 @@
         <input type="button" value="Mostrar o dobro" onclick="dobro()">
     </form>
     <label for="resultado">Dobro do valor:</label>
-    <input type="text" name="resultado" id="resultado" disabled>
+    <input type="text" name="resultado" id="resultado" onfocus="troca()">
 </body>
 
 </html>

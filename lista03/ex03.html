@@ -4,28 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        table {
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1em;
+        }
+    </style>
     <script>
         function resultado() {
             var nota1 = parseFloat(document.querySelector('#nota1').value);
             var nota2 = parseFloat(document.querySelector('#nota2').value);
-            // console.log(nota1 + " " + nota2)
+
+            if (isNaN(nota1) || isNaN(nota2)) {
+                alert("Verifique os valores")
+                return;
+            }
+
+            if (nota1 > 50 || nota2 > 50) {
+                alert("Nota acima do valor máximo");
+                return;
+            }
+
+            if (nota1 < 0 || nota2 < 0) {
+                alert("Nota abaixo do valor mínimo");
+                return;
+            }
+
             var res = (nota1 + nota2)
             if (res >= 60)
                 alert("Aluno aprovado, parabéns")
             else
                 alert("Aluno reprovado")
         }
+        // function verificaNota() {
+        //     var nota1 = document.querySelector("#nota1").value;
+        //     var nota2 = document.querySelector("#nota2").value;
+        //     function maiorMenor(nota) {
+        //         if (nota > 50) {
+        //             alert("Sua nota foi reajustada para o valor máximo do bimestre")
+        //             return nota.value = 50;
+        //         }
+        //     }
+        //     maiorMenor(nota1)
+        //     maiorMenor(nota2)
+        // }
+        // maiorMenor(nota1);
     </script>
 </head>
 
 <body>
-    <form>
-        <label for="nota1">Nota (1º bimestre):</label>
-        <input type="text" name="nota1" id="nota1"><br>
-        <label for="nota2">Nota (2º bimestre):</label>
-        <input type="text" name="nota2" id="nota2"><br>
-        <input type="button" value="Resultado" onclick="resultado()">
-    </form>
+    <table>
+        <tr>
+            <td><label for="nota1">Nota (1º bimestre):</label></td>
+            <td><input type="text" name="nota1" id="nota1"></td>
+        </tr>
+        <tr>
+            <td><label for="nota2">Nota (2º bimestre):</label></td>
+            <td><input type="text" name="nota2" id="nota2"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Resultado" onclick="resultado()"></td>
+        </tr>
+    </table>
 </body>
 
 </html>
