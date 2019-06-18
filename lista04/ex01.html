@@ -79,16 +79,16 @@
             var padrao = /^([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]:[0-9][0-9]$/;
             var tempo = document.querySelector('#tempo').value;
 
-            padrao.test(tempo) ? alert('Passou no teste') : alert('Tente HH:MM:SS:CC\nSendo: (HH: hora, MM: minuto, SS: segundo, CC: centésimo de segundo).\nValores permitidos para cada unidade de tempo: (HH>=00 && HH<=23), (MM>=00 && MM<=59), (SS>=00 && SS<=59) e (CC>=00 && CC<=99)');
+            padrao.test(tempo) ? alert('Passou no teste') : alert('Padrão incorreto\n\nTente HH:MM:SS:CC\nSendo: (HH: hora, MM: minuto, SS: segundo, CC: centésimo de segundo).\nValores permitidos para cada unidade de tempo: (HH>=00 && HH<=23), (MM>=00 && MM<=59), (SS>=00 && SS<=59) e (CC>=00 && CC<=99)');
         }
 
         function validarSenha() { 
-            // /^[\w\._-]{5}  &  [A-Pa-p]+  \.  [aeiou]+  \.  [A-Za-z0-5]*  -  [^\d]+  ,  \W{2}  \.  [^ab01]+$/
-            var padrao = /^[\w\._-]{5}&[A-Pa-p]+\.[aeiou]+\.[A-Za-z0-5]*-[^\d]+,\W{2}\.[^ab01]+$/;
+            // /^[\w\._-]{5}  &  [A-Pa-p]+  \.  [aeiou]+  \.  (\.z?|[A-z][0-5]|[A-z]|[0-5])*  -  [^\d]+  ,  \W{2}  \.  [^ab01]+$/
+            var padrao = /^[\w\._-]{5}&[A-Pa-p]+\.[aeiou]+\.(\.z?|[A-z][0-5]|[A-z]|[0-5])*-[^\d]+,\W{2}\.[^ab01]+$/;
             var senha = document.querySelector('#senha').value;
             // aaaaa&a.a.-a,**.c
             // 321a.&apMb.aei.Ab0-asf+_,/*.cq
-            padrao.test(senha) ? alert('Senha válida') : alert('Únicos formatos permitidos: X&W.Y.Z-U,V.T ou X&W.Y-U,V.T\nOnde X deverá ser no mínimo 5 (cinco) caracteres alfanuméricos, além de um dos seguintes símbolos (“.”, “-”,”_”)\nW deverá ser apenas letras maiúsculas ou minúsculas de "a" a "p" (pelo menos 1)\nY apenas vogais minúsculas (pelo menos 1)\nZ apenas letras maiúsculas ou minúsculas e/ou números de 0 a 5 (opcional)\nU deverá ser caracteres diferentes de números (pelo menos 1)\nV deverá ser 2 caracteres especiais\nT qualquer caracter exceto "a","b","0" e "1" (pelo menos 1)\nExemplo: 321a.&apMb.aei.Ab0-asf+_,/*.cq');
+            padrao.test(senha) ? alert('Senha válida') : alert('Padrão incorreto\n\nÚnicos formatos permitidos: X&W.Y.Z-U,V.T ou X&W.Y-U,V.T\nOnde X deverá ser no mínimo 5 (cinco) caracteres alfanuméricos, além de um dos seguintes símbolos (“.”, “-”,”_”)\nW deverá ser apenas letras maiúsculas ou minúsculas de "a" a "p" (pelo menos 1)\nY apenas vogais minúsculas (pelo menos 1)\nZ apenas letras maiúsculas ou minúsculas e/ou números de 0 a 5 (opcional)\nU deverá ser caracteres diferentes de números (pelo menos 1)\nV deverá ser 2 caracteres especiais\nT qualquer caracter exceto "a","b","0" e "1" (pelo menos 1)\nExemplo: 321a.&apMb.aei.Ab0-asf+_,/*.cq');
         }
     </script>
 </head>
