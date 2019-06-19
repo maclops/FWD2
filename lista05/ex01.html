@@ -1,0 +1,91 @@
+<!-- - Construir um cronômetro do tipo HH:MM:SS, contendo três botões "Play", "Pause" e "Stop".
+    Dica: Utilize o conceito de temporizadores apresentado na última aula (setTimeout e clearTimeout). -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .crono {
+            display: inline;
+        }
+    </style>
+    <script>
+        function initial() {
+            hh = 0;
+            mm = 0;
+            ss = 0;
+            segundos.innerHTML = ":00";
+            minutos.innerHTML = ":00";
+            horas.innerHTML = "00";
+        }
+
+        function play() {
+            controle = setInterval(cronometro, 1000);
+            document.querySelector('#play').disabled = true;
+            document.querySelector('#pause').disabled = false;
+            document.querySelector('#stop').disabled = false;
+        }
+
+        function pause() {
+            clearTimeout(controle);
+            document.querySelector('#play').disabled = false;
+            document.querySelector('#pause').disabled = true;
+            document.querySelector('#stop').disabled = false;
+        }
+
+        function stop() {
+            clearTimeout(controle);
+            initial();
+            document.querySelector('#play').disabled = false;
+            document.querySelector('#pause').disabled = false;
+            document.querySelector('#stop').disabled = true;
+        }
+
+        function cronometro() {
+            if (ss <= 59) {
+                ss++;
+                if (ss < 10)
+                    ss = "0" + ss;
+                segundos.innerHTML = ":" + ss;
+                if (ss == 60) {
+                    ss = "0" + 0;
+                    mm++;
+                    if (mm < 10)
+                        mm = "0" + mm;
+                    minutos.innerHTML = ":" + mm;
+                    if (mm == 60) {
+                        mm = "0" + 0;
+                        hh++;
+                        if (hh < 10)
+                            horas.innerHTML = "0" + hh;
+                        else
+                            horas.innerHTML = hh;
+                        if (hh > 23)
+                            hh = 0;
+                    }
+                }
+            }
+        }
+        initial()
+    </script>
+</head>
+
+<body>
+    <div>
+        <div class="crono" id="horas">00</div>
+        <div class="crono" id="minutos">:00</div>
+        <div class="crono" id="segundos">:00</div>
+    </div>
+    <input type="button" id="play" value="Play" onclick="play()">
+    <input type="button" id="pause" value="Pause" onclick="pause()">
+    <input type="button" id="stop" value="Stop" onclick="stop()">
+</body>
+
+</html>
