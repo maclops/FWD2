@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tp-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+        integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link href="css\estilos.css" rel="stylesheet">
+    <script src="js\funcoes.js"></script>
+    <title>Adoção animal</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <img src="img/logo.png" id="logo" alt="Logo">
+        <h1 id="titulo">FEIRA DE ADOÇÃO ANIMAL</h1>
+    </div>
+
+    <div>
+        <div id="menuLateral">
+            <ul id="menu">
+                <li><a href="#" onmouseover="trocarImg('cac2','Cachorros')" 
+                    title="Clique para ver os cachorrinhos">Cachorros <i class='fas fa-dog'></i></a></li>
+                <li><a href="#" onmouseover="trocarImg('gat1','Gatos')" 
+                    title="Clique para ver os gatinhos">Gatos <i class='fas fa-cat'></i></a></li>
+                <li><a href="#" onmouseover="trocarImg('sap1','Sapos')" 
+                    title="Clique para ver os sapinhos">Sapos <i class='fas fa-frog'></i></a></li>
+                <li><a href="#" onmouseover="trocarImg('pon1','Poneis')" 
+                    title="Clique para ver os poneis">Poneis <i class='fas fa-horse'></i></a></li>
+                <li><a href="#" onmouseover="trocarImg('dra3','Dragoes')" 
+                    title="Clique para ver os Dragões">Dragões <i class='fas fa-dragon'></i></a></li>
+            </ul>
+        </div>
+        <div id="imagem">
+            <img src="img/cac2.jpg" id="imgAnimal" alt="Imagem do animal"
+           onclick="trocarAnimal('bicho')">
+        </div>
+    </div>
+
+    <div class="footer">
+        <h1 id="legenda">APA - Associação de Proteção Animal</h1>
+    </div>
+
+</body>
+
+</html>
