@@ -1,0 +1,11 @@
+.personagem {
+    border: 1px solid black;
+    text-align: center;
+    position: absolute;
+    width: 150px;
+    height: 170px;
+    top: 50%;
+    margin-top: -75px;
+    left: 50%;
+    margin-left: -85px;
+}
